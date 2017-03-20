@@ -1,16 +1,26 @@
 <!-- Inspired by bootstrap http://getbootstrap.com/ -->
 <template>
-  <div class="btn btn-{{type}} btn-sz-{{size}}">
-    <text class="btn-txt btn-txt-{{type}} btn-txt-sz-{{size}}">{{value}}</text>
+  <div class="btn" :class="[`btn-${type}`, `btn-sz-${size}`]">
+    <text class="btn-txt" :class="[`btn-txt-${type}`, `btn-txt-sz-${size}`]" >{{value}}</text>
   </div>
 </template>
 
 <script>
   module.exports = {
-    data: {
-      type: 'default',
-      size: 'large',
-      value: ''
+    props: {
+      type: {
+        default: 'default'
+      },
+      size: {
+        default: 'large'
+      },
+      value: {
+        default: ''
+      }
+    },
+    data: function(){
+      return {
+      }
     },
     methods: {
     }
